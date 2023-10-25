@@ -1,0 +1,17 @@
+Script started on Wed 25 Oct 2023 03:42:45 PM EDT
+]0;awrose@login00.darwin:~/CISC372_picProject[?1034h[(ea-cisc372-silber:awrose)@login00.darwin CISC372_picProject]$ salloc --ntasks= 1 --cpus-per-task=4 --partition=standard
+salloc: Granted job allocation 4709993
+salloc: Waiting for resource configuration
+salloc: Nodes r1n32 are ready for job
+]0;awrose@r1n32.darwin:~/CISC372_picProject[?1034h[awrose@r1n32 CISC372_picProject]$ srun ./imageDarwin pic1.jpg edge
+Took 7 seconds
+]0;awrose@r1n32.darwin:~/CISC372_picProject[awrose@r1n32 CISC372_picProject]$ srun ./imagempDarwin pic1.jpg edge
+Took 6 seconds
+]0;awrose@r1n32.darwin:~/CISC372_picProject[awrose@r1n32 CISC372_picProject]$ exit
+logout
+salloc: Relinquishing job allocation 4709993
+salloc: Job allocation 4709993 has been revoked.
+]0;awrose@login00.darwin:~/CISC372_picProject[(ea-cisc372-silber:awrose)@login00.darwin CISC372_picProject]$ exit
+exit
+
+Script done on Wed 25 Oct 2023 03:43:51 PM EDT

@@ -120,7 +120,8 @@ void *convoluteThreads(void *args)
     span = srcImage->bpp * srcImage->bpp;
     // the loop to parallelize
     // for (row=0;row<srcImage->height;row++){
-    for (int i = start; i < end; i++)
+    int i;
+    for (i = start; i < end; i++)
     {
         for (pix = 0; pix < srcImage->width; pix++)
         {
@@ -188,12 +189,13 @@ int main(int argc, char **argv)
     destImage.width = srcImage.width;
     destImage.data = malloc(sizeof(uint8_t) * destImage.width * destImage.bpp * destImage.height);
 
-    long thread;
+    //long thread;
     pthread_t *thread_handles;
     thread_args threadArgs[thread_count];
     thread_handles = (pthread_t *)malloc(thread_count * sizeof(pthread_t));
 
-    for (int thread = 0; thread < thread_count; thread++)
+    int thread;
+    for (thread = 0; thread < thread_count; thread++)
     {
         threadArgs[thread].srcImage = &srcImage;
         threadArgs[thread].destImage = &destImage;
